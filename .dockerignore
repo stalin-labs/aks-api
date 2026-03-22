@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE / Editor
+.vs
+.vscode
+.idea
+*.user
+*.suo
+*.swp
+*.tmp
+
+# Build outputs
+bin/
+obj/
+out/
+dist/
+build/
+
+# Test artifacts
+TestResults/
+coverage/
+*.trx
+
+# Docker
+docker-compose*
+.dockerignore
+
+# Environment / secrets
+.env
+.env.*
+secrets*
+*.pfx
+*.key
+
+# Kubernetes / Helm dev configs
+charts/
+values.dev.yaml
+secrets.dev.yaml
+
+# Documentation
+README.md
+LICENSE
