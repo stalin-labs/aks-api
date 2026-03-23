@@ -1,0 +1,74 @@
+You are a senior .NET engineer and DevOps expert.
+
+Goal:
+Automate containerization and modernization of an existing .NET Core Web API project.
+
+Tasks:
+
+1. Dockerization
+- Add a Dockerfile to the root of the project
+- Follow this template strictly: https://github.com/stalin-labs/aks-api/blob/main/Dockerfile
+- Ensure:
+  - Multi-stage build
+  - Optimized image size
+  - Proper port exposure
+  - Environment variables supported
+
+2. GitHub Workflow
+
+- Add a GitHub Actions workflow under `.github/workflows/build.yml`
+
+- Use this template EXACTLY as base: https://github.com/stalin-labs/aks-api/blob/main/.github/workflows/build.yml
+
+- DO NOT modify any logic, steps, or structure in the template.
+
+- Only replace the following variables:
+  1. imageName
+  2. acrName
+  3. repositoryName
+
+- Ensure:
+  - YAML syntax remains valid
+  - Secrets and variables are not altered
+  - No additional steps are introduced
+
+- Output:
+  - Final `build.yml` file with only the required values replaced
+
+3. NuGet Upgrade
+- Identify outdated NuGet packages
+- Upgrade to latest stable versions
+- Ensure no breaking changes (fix code if required)
+
+4. Database Detection & Health Checks
+- Detect if project uses:
+  - MS SQL Server
+  - PostgreSQL
+- Based on detection:
+  - Add appropriate health checks
+  - Add required NuGet packages (e.g., AspNetCore.HealthChecks.*)
+  - Configure health check endpoints: `/health`
+
+5. Code Changes
+- Register health checks in `Program.cs`
+- Ensure application runs without errors after changes
+
+6. Validation
+- Ensure:
+  - Project builds successfully
+  - Docker image builds successfully
+  - No runtime errors
+
+7. Pull Request
+- Create a new branch: `feature/containerization-automation`
+- Commit changes with clear messages
+- Raise a Pull Request with:
+  - Summary of changes
+  - List of upgraded packages
+  - Health check details
+  - Any assumptions made
+
+Output Format:
+- Show all added/modified files
+- Provide explanations only where necessary
+- Keep changes minimal and production-ready
