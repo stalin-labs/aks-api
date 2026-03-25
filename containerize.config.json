@@ -1,0 +1,8 @@
+{
+  "image_name": "glencore.myapplication.api",
+  "repository_name": "myapplication-api",
+  "acr_name": "acrdevgbaz1doapis",
+  "deployment_env": "appseng-dev",
+  "nuget_source": "artifactory", // either artifactory or nuget
+  "base_branch": "development" // the branch to create the PR against. e.g: development, master, main
+}
